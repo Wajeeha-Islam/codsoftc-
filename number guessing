@@ -1,0 +1,86 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+#include<iomanip>
+using namespace std;
+
+int main(){
+	char ch;
+	do{
+    srand((unsigned int)time(NULL));
+    
+    int number = (rand() % 100 )+1;
+    int guess=0, i=0 , y=10;
+
+    cout<<setw(70)<<"\" ___GUESSING GAME___ \""<<endl<<endl;
+
+    for( int x=0; x<115; x++){
+        cout<<"*";   
+    }
+    
+    cout<<endl<<endl; 
+        
+    do{
+        cout<<"Guess the number between 1 and 100 you have " << y << " tries: ";
+        cin>>guess;
+        cout<<endl;
+        
+        i++;
+        y--;
+        
+        if(guess<number){
+            cout<<"The Number you entered is less"<<endl;
+            cout<<"Try again!!!"<<endl<<endl;
+        }
+        else if(guess>number){
+            cout<<"The Number you entered is greater"<<endl;
+            cout<<"Try again!!!"<<endl<<endl;
+        }
+        else{
+            cout<<"You Enter the Correct Number: "<<endl;
+            cout<<guess;
+            cout<<endl<<endl;    
+        }
+    }
+    while(guess != number && y>0);
+    
+    if(guess == number){
+    	  
+    	 if(i<=5){
+    	 	cout<<setw(75)<<"Woa!!! YOU GOT 5 STARS !!!"<<endl;
+		 }
+		 else if(i== 6 ){
+    	 	cout<<setw(75)<<"Woa!!! YOU GOT 4 STARS !!!"<<endl;
+		 }
+		 else if(i<= 7){
+    	 	cout<<setw(75)<<"Woa!!! YOU GOT 3 STARS !!!"<<endl;
+		 }
+		 else if(i<= 8){
+    	 	cout<<setw(75)<<"Woa!!! YOU GOT 2 STARS !!!"<<endl;
+		 }
+		 else if(i<= 9){
+    	 	cout<<setw(75)<<"Woa!!! YOU GOT 1 STARS !!!"<<endl;
+		 }
+		 cout<<setw(60)<<"YOU WIN IN "<<i<< " TRIES "<<endl<<endl;  
+
+    for( int x=0; x<115; x++){
+        cout<<"*";
+    }
+    
+    
+    cout<<setw(83)<<"HOPE YOU LIKE THE GAME SEE YOU NEXT TIME";
+	}
+	
+	else{
+		cout<<setw(80)<<"OH NO!!! You LOSE..... YOU CAN TRY AGAIN "<<endl<<endl; 
+	}
+
+    cout<<endl<<endl;
+    
+    cout<<setw(75)<<"PRESS Y IF YOU WANT TO PLAY AGAIN ";
+    cin>>ch;
+    cout<<endl<<endl;
+}
+while(ch == 'y' || ch == 'Y' );
+    return 0;
+}
