@@ -1,0 +1,90 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void star(void){
+	cout<<endl<<endl;
+		for(int i=0; i<120; i++){
+		cout<<"*";
+	}
+	cout<<endl<<endl;
+}
+
+int main(){
+	cout<<setw(70)<<"WELCOME!!!"<<endl<<endl;
+	star();
+
+	cout<<setw(80)<<"CALCULATOR FOR ARITHMETIC OPERATIONS";
+	star();
+	
+	int a1, a2, Result, y;
+	char ch;
+	do{
+			cout<<setw(20)<<"1:Addition \n";
+			cout<<setw(23)<<"2:Subtraction \n";
+			cout<<setw(26)<<"3:Multiplication \n";
+			cout<<setw(20)<<"4:Division \n";
+			cout<<setw(16)<<"5:EXIT \n";
+			cout<<"Enter your Choice please: "<<endl;
+			cin>>y;
+			star();
+			switch(y)
+			{
+				case 1:
+					cout<<setw(70)<<"ADDITION"<<endl;
+					cout<<setw(50)<<"Enter first number:";
+					cin>>a1;
+					cout<<setw(51)<<"Enter second number:";
+					cin>>a2;
+					Result=a1+a2;
+					cout<<setw(50)<<"Result="<<Result<<endl;
+					star();
+				
+					break;
+				case 2:
+					cout<<setw(70)<<"SUBTARCTION"<<endl;
+					cout<<setw(50)<<"Enter first number:";
+					cin>>a1;
+					cout<<setw(51)<<"Enter second number:";
+					cin>>a2;
+					Result=a1-a2;
+					cout<<setw(50)<<"Result="<<Result<<endl;
+					star();
+					break;
+				case 3:
+					cout<<setw(70)<<"MULTIPLICATION"<<endl;
+					cout<<setw(50)<<"Enter first number:";
+					cin>>a1;
+					cout<<setw(51)<<"Enter second number:";
+					cin>>a2;
+					Result=a1*a2;
+					cout<<setw(50)<<"Result="<<Result<<endl;
+					star();
+					break;
+				case 4:
+					cout<<setw(70)<<"DIVISION"<<endl;
+					cout<<setw(50)<<"Enter first number:";
+					cin>>a1;
+					cout<<setw(51)<<"Enter second number...";
+					cin>>a2;
+					if(a2==0)
+					{
+						cout<<"Enter another number other then zero :";
+						cin>>a2;
+					}
+					Result=a1/a2;
+					cout<<setw(50)<<"Result="<<Result<<endl;
+					star();
+					break;
+				case 5:
+					cout<<setw(82)<<"Thank you !!! Hope to see you Again :)(:";
+					star();
+					return 0;
+					break;
+			}
+		cout<<"Enter \"y\" if wanna do more calculation "<<endl;
+		cin>>ch;
+	}
+		while( ch == 'y' || ch == 'Y');
+	return 0;
+}
